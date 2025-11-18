@@ -6,7 +6,8 @@ export enum Page {
   SERVICES = 'SERVICES',
   BLOG = 'BLOG',
   CONTACT = 'CONTACT',
-  LOGIN = 'LOGIN'
+  LOGIN = 'LOGIN',
+  DASHBOARD = 'DASHBOARD'
 }
 
 export interface ServiceItem {

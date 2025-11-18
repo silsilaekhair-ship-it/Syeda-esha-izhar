@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, HeartHandshake, UserCircle } from 'lucide-react';
+import { Menu, X, HeartHandshake, UserCircle, LayoutDashboard } from 'lucide-react';
 import { Page } from '../types';
 
 interface NavigationProps {
   currentPage: Page;
   onNavigate: (page: Page) => void;
+  isAuthenticated?: boolean;
 }
 
-export const Navigation: React.FC<NavigationProps> = ({ currentPage, onNavigate }) => {
+export const Navigation: React.FC<NavigationProps> = ({ currentPage, onNavigate, isAuthenticated = false }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -65,14 +66,26 @@ export const Navigation: React.FC<NavigationProps> = ({ currentPage, onNavigate 
             ))}
             
             <div className="flex items-center space-x-3 pl-4 border-l border-gray-200">
-               <button 
-                onClick={() => onNavigate(Page.LOGIN)}
-                className={`text-gray-500 hover:text-rose-500 transition-colors flex items-center text-sm font-medium ${currentPage === Page.LOGIN ? 'text-rose-500 font-semibold' : ''}`}
-                title="Therapist Login"
-              >
-                <UserCircle size={20} className="mr-1" />
-                Login
-              </button>
+              {isAuthenticated ? (
+                <button 
+                  onClick={() => onNavigate(Page.DASHBOARD)}
+                  className={`text-rose-500 hover:text-rose-600 transition-colors flex items-center text-sm font-medium bg-rose-50 px-3 py-2 rounded-lg ${currentPage === Page.DASHBOARD ? 'ring-2 ring-rose-200' : ''}`}
+                  title="Go to Dashboard"
+                >
+                  <LayoutDashboard size={18} className="mr-1" />
+                  Dashboard
+                </button>
+              ) : (
+                <button 
+                  onClick={() => onNavigate(Page.LOGIN)}
+                  className={`text-gray-500 hover:text-rose-500 transition-colors flex items-center text-sm font-medium ${currentPage === Page.LOGIN ? 'text-rose-500 font-semibold' : ''}`}
+                  title="Therapist Login"
+                >
+                  <UserCircle size={20} className="mr-1" />
+                  Login
+                </button>
+              )}
+              
               <button 
                 onClick={() => onNavigate(Page.CONTACT)}
                 className="bg-rose-400 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-rose-500 transition-colors shadow-md shadow-rose-200"
@@ -115,7 +128,19 @@ export const Navigation: React.FC<NavigationProps> = ({ currentPage, onNavigate 
               </button>
             ))}
             <hr className="border-gray-100 my-2" />
-             <button
+            {isAuthenticated ? (
+               <button
+                onClick={() => {
+                  onNavigate(Page.DASHBOARD);
+                  setIsOpen(false);
+                }}
+                className="block w-full text-left px-3 py-3 rounded-lg text-base font-medium bg-rose-50 text-rose-600"
+              >
+                <LayoutDashboard size={18} className="inline mr-2" />
+                Dashboard
+              </button>
+            ) : (
+               <button
                 onClick={() => {
                   onNavigate(Page.LOGIN);
                   setIsOpen(false);
@@ -126,8 +151,10 @@ export const Navigation: React.FC<NavigationProps> = ({ currentPage, onNavigate 
                     : 'text-gray-600 hover:bg-rose-50 hover:text-rose-500'
                 }`}
               >
+                <UserCircle size={18} className="inline mr-2" />
                 Therapist Login
               </button>
+            )}
           </div>
         </div>
       )}

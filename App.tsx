@@ -7,15 +7,27 @@ import { Services } from './pages/Services';
 import { Blog } from './pages/Blog';
 import { Contact } from './pages/Contact';
 import { Login } from './pages/Login';
+import { Dashboard } from './pages/Dashboard';
 import { Page } from './types';
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<Page>(Page.HOME);
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
 
   // Simple scroll-to-top on page change
   const handleNavigate = (page: Page) => {
+    // Protect Dashboard Route
+    if (page === Page.DASHBOARD && !isAuthenticated) {
+      setCurrentPage(Page.LOGIN);
+      return;
+    }
     setCurrentPage(page);
     window.scrollTo(0, 0);
+  };
+
+  const handleLoginSuccess = () => {
+    setIsAuthenticated(true);
+    handleNavigate(Page.DASHBOARD);
   };
 
   const renderPage = () => {
@@ -31,7 +43,9 @@ const App: React.FC = () => {
       case Page.CONTACT:
         return <Contact />;
       case Page.LOGIN:
-        return <Login />;
+        return <Login onLoginSuccess={handleLoginSuccess} />;
+      case Page.DASHBOARD:
+        return isAuthenticated ? <Dashboard /> : <Login onLoginSuccess={handleLoginSuccess} />;
       default:
         return <Home onNavigate={handleNavigate} />;
     }
@@ -39,7 +53,11 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-rose-50 text-gray-800 font-sans selection:bg-rose-200">
-      <Navigation currentPage={currentPage} onNavigate={handleNavigate} />
+      <Navigation 
+        currentPage={currentPage} 
+        onNavigate={handleNavigate} 
+        isAuthenticated={isAuthenticated}
+      />
       
       <main className="min-h-screen">
         {renderPage()}
