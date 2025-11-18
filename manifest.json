@@ -1,0 +1,16 @@
+{
+  "short_name": "Silsila-e-Khair",
+  "name": "Silsila-e-Khair: Mental Wellbeing",
+  "icons": [
+    {
+      "src": "https://cdn.jsdelivr.net/npm/lucide-static@0.344.0/icons/heart-handshake.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#fff1f2",
+  "background_color": "#fff1f2",
+  "description": "A soft, elegant, and calming mental-wellbeing platform designed to provide emotional support."
+}
