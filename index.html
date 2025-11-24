@@ -4,29 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <!-- SEO Meta Tags for Google -->
     <title>Silsila-e-Khair | Mental Wellbeing & Therapy by Syeda Esha Izhar</title>
-    <meta name="description" content="Silsila-e-Khair is a mental wellbeing platform offering emotional support, student guidance, and therapy. Led by Clinical Psychologist Syeda Esha Izhar (M.Phil, Masters KU)." />
-    <meta name="keywords" content="mental health, therapy, psychologist, Syeda Esha Izhar, Karachi University, Iqra University, emotional support, student guidance, anxiety, depression, Silsila-e-Khair" />
-    <meta name="author" content="Syeda Esha Izhar" />
-    
-    <!-- PWA & Mobile Optimization -->
-    <link rel="manifest" href="/manifest.json">
-    <meta name="theme-color" content="#fff1f2">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:;">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f43f5e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z'/></svg>">
-
-    <!-- Search Engine Crawling Instructions -->
-    <meta name="robots" content="index, follow" />
-    <meta name="google-site-verification" content="Please_Enter_Your_Google_Verification_Code_Here" />
+    <meta name="description" content="Silsila-e-Khair is a mental wellbeing platform offering emotional support, student guidance, and therapy." />
     
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
@@ -97,23 +78,20 @@
       .animation-delay-2000 {
         animation-delay: 2s;
       }
-      .animation-delay-4000 {
-        animation-delay: 4s;
-      }
     </style>
-  <script type="importmap">
+    <script type="importmap">
 {
   "imports": {
-    "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "react": "https://aistudiocdn.com/react@^19.2.0",
-    "react-dom/client": "https://aistudiocdn.com/react-dom@^19.2.0/client",
+    "react": "https://esm.sh/react@18",
+    "react-dom/client": "https://esm.sh/react-dom@18/client",
+    "react-dom": "https://esm.sh/react-dom@18",
+    "lucide-react": "https://esm.sh/lucide-react@0.344.0",
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "react-dom": "https://aistudiocdn.com/react-dom@^19.2.0",
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0"
+    "react/": "https://aistudiocdn.com/react@^19.2.0/"
   }
 }
 </script>
-</head>
+  </head>
   <body class="bg-rose-50 text-gray-800">
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>

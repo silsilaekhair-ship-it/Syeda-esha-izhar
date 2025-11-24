@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from '../components/Button';
 import { Page, ServiceItem } from '../types';
-import { Smile, Coffee, Feather, PenTool, ArrowRight, HeartHandshake } from 'lucide-react';
+import { Smile, Coffee, Feather, PenTool, ArrowRight, HeartHandshake, Brain } from 'lucide-react';
 import { Modal } from '../components/Modal';
 
 interface ServicesProps {
@@ -54,6 +54,20 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate }) => {
       • Guided Mindfulness: Audio and visual exercises to ground you in the present moment.
       • Self-Compassion Breaks: Techniques to treat yourself with the same kindness you offer a friend.`,
       icon: <Feather className="w-full h-full text-teal-500 opacity-80" />,
+    },
+    {
+      id: '4',
+      title: 'Therapy Sessions',
+      description: 'Professional psychological therapy to address mental health disorders and emotional challenges.',
+      details: `Embark on a structured healing journey with our Clinical Therapy Sessions. Led by qualified psychologists, these sessions use evidence-based approaches to treat specific mental health conditions.
+
+      Focus areas include:
+      • Anxiety & Depression: Cognitive Behavioral Therapy (CBT) techniques to manage symptoms.
+      • Trauma Recovery: Safe spaces to process past experiences.
+      • Behavioral Modification: Strategies to change unhelpful patterns.
+
+      These sessions are suitable for individuals seeking professional clinical intervention for diagnosed conditions or deep-seated psychological distress.`,
+      icon: <Brain className="w-full h-full text-rose-500 opacity-80" />,
     }
   ];
 
