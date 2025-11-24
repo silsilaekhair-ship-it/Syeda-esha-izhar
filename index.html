@@ -15,21 +15,15 @@
     <meta name="theme-color" content="#fff1f2">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:;">
     
-    <!-- Favicon (Using SVG for scalability) -->
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f43f5e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z'/></svg>">
 
     <!-- Search Engine Crawling Instructions -->
     <meta name="robots" content="index, follow" />
-    <!-- Google Site Verification (Placeholder) -->
     <meta name="google-site-verification" content="Please_Enter_Your_Google_Verification_Code_Here" />
     
-    <!-- Open Graph / Facebook / WhatsApp Preview -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Silsila-e-Khair | Healing & Hope" />
-    <meta property="og:description" content="A sanctuary for emotional healing. Book a session with Syeda Esha Izhar for guidance and support." />
-    <meta property="og:image" content="https://picsum.photos/seed/calm/1200/630" />
-
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,6 +35,10 @@
             fontFamily: {
               sans: ['Nunito', 'sans-serif'],
               serif: ['Lora', 'serif'],
+            },
+            boxShadow: {
+              'soft': '0 10px 40px -10px rgba(0,0,0,0.08)',
+              'glow': '0 0 20px rgba(244, 63, 94, 0.3)',
             },
             colors: {
               rose: {
@@ -54,15 +52,27 @@
                 700: '#be123c',
                 800: '#9f1239',
                 900: '#881337',
+              },
+              teal: {
+                50: '#f0fdfa',
+                100: '#ccfbf1',
+                500: '#14b8a6',
+                600: '#0d9488',
+                900: '#134e4a',
               }
             },
             animation: {
-              'fade-in': 'fadeIn 0.5s ease-out',
+              'fade-in': 'fadeIn 0.8s ease-out forwards',
+              'slide-up': 'slideUp 0.8s ease-out forwards',
               'blob': 'blob 7s infinite',
             },
             keyframes: {
               fadeIn: {
-                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              slideUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
                 '100%': { opacity: '1', transform: 'translateY(0)' },
               },
               blob: {
@@ -78,11 +88,17 @@
     </script>
     <style>
       body {
-        background-color: #fff1f2; /* rose-50 */
+        background-color: #fff1f2;
+        margin: 0;
       }
-      /* Smooth scrolling */
       html {
         scroll-behavior: smooth;
+      }
+      .animation-delay-2000 {
+        animation-delay: 2s;
+      }
+      .animation-delay-4000 {
+        animation-delay: 4s;
       }
     </style>
   <script type="importmap">
@@ -90,13 +106,15 @@
   "imports": {
     "react/": "https://aistudiocdn.com/react@^19.2.0/",
     "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/client": "https://aistudiocdn.com/react-dom@^19.2.0/client",
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react-dom": "https://aistudiocdn.com/react-dom@^19.2.0",
     "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0"
   }
 }
 </script>
 </head>
-  <body>
+  <body class="bg-rose-50 text-gray-800">
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
   </body>

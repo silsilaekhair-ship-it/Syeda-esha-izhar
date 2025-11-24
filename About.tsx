@@ -26,8 +26,8 @@ export const About: React.FC = () => {
             </p>
           </div>
           <div className="order-1 md:order-2">
-            <div className="rounded-[3rem] overflow-hidden shadow-xl shadow-rose-100 transform hover:scale-[1.02] transition-transform duration-500">
-              <img src="https://picsum.photos/seed/kindness/800/600" alt="Team collaborating in a peaceful environment" className="w-full h-auto" />
+            <div className="rounded-[3rem] overflow-hidden shadow-xl shadow-rose-100">
+              <img src="https://picsum.photos/seed/kindness/800/600" alt="Team meeting" className="w-full h-auto" />
             </div>
           </div>
         </div>
@@ -38,7 +38,7 @@ export const About: React.FC = () => {
             <div className="md:col-span-5 bg-rose-200 h-96 md:h-auto relative">
               <img 
                 src="https://picsum.photos/seed/therapist/600/800" 
-                alt="Portrait of Syeda Esha Izhar, Clinical Psychologist" 
+                alt="Syeda Esha Izhar" 
                 className="w-full h-full object-cover mix-blend-multiply opacity-90"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-rose-900/50 to-transparent md:hidden"></div>
@@ -92,7 +92,7 @@ export const About: React.FC = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-3xl border border-rose-50 shadow-sm text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+            <div className="bg-white p-8 rounded-3xl border border-rose-50 shadow-sm text-center hover:shadow-md transition-shadow">
               <div className="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Heart className="text-rose-500 w-8 h-8" />
               </div>
@@ -102,7 +102,7 @@ export const About: React.FC = () => {
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-3xl border border-rose-50 shadow-sm text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+            <div className="bg-white p-8 rounded-3xl border border-rose-50 shadow-sm text-center hover:shadow-md transition-shadow">
               <div className="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Shield className="text-rose-500 w-8 h-8" />
               </div>
@@ -112,7 +112,7 @@ export const About: React.FC = () => {
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-3xl border border-rose-50 shadow-sm text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+            <div className="bg-white p-8 rounded-3xl border border-rose-50 shadow-sm text-center hover:shadow-md transition-shadow">
               <div className="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Sun className="text-rose-500 w-8 h-8" />
               </div>

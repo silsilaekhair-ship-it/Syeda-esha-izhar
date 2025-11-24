@@ -105,7 +105,7 @@ export const Blog: React.FC = () => {
             <div 
               key={post.id} 
               onClick={() => setSelectedPost(post)}
-              className="bg-white rounded-[2rem] overflow-hidden shadow-soft hover:shadow-2xl hover:shadow-rose-100/40 transition-all duration-300 group cursor-pointer border border-transparent hover:border-rose-100 flex flex-col h-full transform hover:-translate-y-1"
+              className="bg-white rounded-[2rem] overflow-hidden shadow-soft hover:shadow-2xl hover:shadow-rose-100/40 transition-all duration-300 group cursor-pointer border border-transparent hover:border-rose-100 flex flex-col h-full"
             >
               <div className="relative overflow-hidden h-64">
                 <img 
@@ -138,7 +138,7 @@ export const Blog: React.FC = () => {
         </div>
 
         {/* Newsletter Signup */}
-        <div className="mt-24 bg-gradient-to-br from-rose-100 to-rose-50 rounded-[3rem] p-10 md:p-20 text-center relative overflow-hidden shadow-lg shadow-rose-50/50">
+        <div className="mt-24 bg-gradient-to-br from-rose-100 to-rose-50 rounded-[3rem] p-10 md:p-20 text-center relative overflow-hidden">
            {/* Decorative circles */}
            <div className="absolute top-0 left-0 w-64 h-64 bg-white opacity-20 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
            <div className="absolute bottom-0 right-0 w-96 h-96 bg-white opacity-20 rounded-full translate-x-1/3 translate-y-1/3"></div>

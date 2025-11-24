@@ -14,6 +14,7 @@ export interface ServiceItem {
   id: string;
   title: string;
   description: string;
+  details?: string; // Extended content for "Read More"
   icon: React.ReactNode;
 }
 
@@ -21,6 +22,7 @@ export interface BlogPost {
   id: string;
   title: string;
   excerpt: string;
+  content?: string; // Full article content
   date: string;
   category: string;
   imageUrl: string;

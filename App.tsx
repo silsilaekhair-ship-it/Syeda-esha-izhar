@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
+import { FloatingWhatsApp } from './components/FloatingWhatsApp';
+import { LegalModal } from './components/LegalModal';
 import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { Services } from './pages/Services';
@@ -14,7 +16,7 @@ const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<Page>(Page.HOME);
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
 
-  // Simple scroll-to-top on page change
+  // Scroll to top on page change
   const handleNavigate = (page: Page) => {
     // Protect Dashboard Route
     if (page === Page.DASHBOARD && !isAuthenticated) {
@@ -64,6 +66,10 @@ const App: React.FC = () => {
       </main>
 
       <Footer onNavigate={handleNavigate} />
+      
+      {/* Global Overlays */}
+      <FloatingWhatsApp />
+      <LegalModal />
     </div>
   );
 };
